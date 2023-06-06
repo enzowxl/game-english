@@ -32,16 +32,20 @@ export default function usePersonMovement(initialPosition) {
 
       const direction = event.key as DIRECTIONS
 
-      if(direction.indexOf('Arrow') === -1){
+      if(event.key.indexOf('Arrow') === -1){
         return
       }
 
 
       const movement = canvasContext.updateCanvas(direction, PersonPosition,PERSONS.PERSON)
 
+      if (direction === DIRECTIONS.LEFT || direction === DIRECTIONS.RIGHT) {
+        setDirection(direction);
+      }
+
+
       if(movement.nextMove.valid){
         setPersonPosition(movement.nextPosition)
-        setDirection(direction)
       }
 
       if(movement.nextMove.paper){

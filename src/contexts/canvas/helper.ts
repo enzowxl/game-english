@@ -4,20 +4,18 @@ import { DIRECTIONS, PERSONS, NUMBER_OBJECTS } from "../../constants/constants";
 
 function handleNextPosition(direction, PersonPosition) {
 
-    console.log(direction + PersonPosition)
-
     
     switch (direction) {
 
-        case DIRECTIONS.RIGHT:
-            return {
-                x: PersonPosition.x + 1,
-                y: PersonPosition.y,
-              }
         case DIRECTIONS.UP:
             return {
                 x: PersonPosition.x,
                 y: PersonPosition.y - 1,
+              }
+        case DIRECTIONS.RIGHT:
+            return {
+                x: PersonPosition.x + 1,
+                y: PersonPosition.y,
               }
         case DIRECTIONS.DOWN:
             return {
