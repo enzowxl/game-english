@@ -26,7 +26,6 @@ export default function usePersonMovement(initialPosition) {
     const [direction, setDirection] = useState(DIRECTIONS.RIGHT)
 
 
-    
 
     useEventListener('keydown', (event: any) => {
 
