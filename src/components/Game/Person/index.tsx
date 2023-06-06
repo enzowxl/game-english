@@ -32,7 +32,7 @@ export default function Person({ initialPosition }) {
             backgroundImage: 'url(./assets/PERSON.png)',
             backgroundPosition: `0px -${TILE_SIZE - HEAD_PERSON}px`,
 
-            animation: 'person-animation 1s steps(5) infinite',
+            animation: 'person-animation 1s steps(4) infinite',
 
             transform: `scaleX(${
               direction 
