@@ -16,7 +16,6 @@ export default function Person({ initialPosition }) {
 
     const { direction, position } =  usePersonMovement(initialPosition)
 
-
     return(
 
           <div 
