@@ -12,6 +12,7 @@ import { DIRECTIONS, PERSONS } from '../../constants/constants'
 import { CanvasContext } from '../../contexts/canvas'
 import { PapersContexts } from '../../contexts/papers'
 import { BananasContexts } from '../../contexts/banana'
+import { StepsContexts } from '../../contexts/steps'
 
 
 export default function usePersonMovement(initialPosition) {
@@ -21,6 +22,8 @@ export default function usePersonMovement(initialPosition) {
     const papersContext = useContext(PapersContexts)
 
     const bananaContext = useContext(BananasContexts)
+
+    const stepsContext = useContext(StepsContexts)
 
     const [PersonPosition, setPersonPosition] = useState(initialPosition)
     const [direction, setDirection] = useState(DIRECTIONS.RIGHT)
@@ -42,9 +45,15 @@ export default function usePersonMovement(initialPosition) {
         setDirection(direction);
       }
 
+      if(stepsContext.steps <= 0){
+        alert('You lose')
+        window.location.reload()
+      }
 
       if(movement.nextMove.valid){
         setPersonPosition(movement.nextPosition)
+        console.log(stepsContext.steps)
+        stepsContext.updateSteps()
       }
 
       if(movement.nextMove.paper){

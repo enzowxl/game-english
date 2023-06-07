@@ -29,7 +29,7 @@ export default function Person({ initialPosition }) {
             height:TILE_SIZE + HEAD_PERSON,
 
             backgroundRepeat: 'no-repeat',
-            backgroundImage: 'url(./assets/PERSON.png)',
+            backgroundImage: 'url(./assets/person.png)',
             backgroundPosition: `0px -${TILE_SIZE - HEAD_PERSON}px`,
 
             animation: 'person-animation 1s steps(4) infinite',
