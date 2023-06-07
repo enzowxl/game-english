@@ -3,6 +3,8 @@ import React, { useContext } from 'react'
 import Person from '../Person'
 import Paper from '../Trash/paper'
 import Banana from '../Trash/banana'
+import Trap from '../Trap'
+
 
 import {
   GAME_SIZE,
@@ -13,6 +15,7 @@ import { canvas } from '../../../contexts/canvas/helper'
 
 import { PapersContexts } from '../../../contexts/papers'
 import { BananasContexts } from '../../../contexts/banana'
+
 
 
 
@@ -63,6 +66,18 @@ function getMap() {
 
         tilesComponent.push(
           <Banana
+            key={key}
+            initialPosition={position}
+          />
+
+        )
+      }
+
+      
+      if (text === NUMBER_OBJECTS.TRAP) {
+
+        tilesComponent.push(
+          <Trap
             key={key}
             initialPosition={position}
           />

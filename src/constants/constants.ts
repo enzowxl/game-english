@@ -24,6 +24,7 @@ export enum NUMBER_OBJECTS {
     BIN = 2,
     PAPER = 3,
     BANANA = 4,
-    HERO = 5
+    HERO = 5,
+    TRAP = 6
 
 }

@@ -55,6 +55,11 @@ export default function usePersonMovement(initialPosition) {
         bananaContext.updateBananas(movement.nextPosition)
       }
 
+      if(movement.nextMove.dead){
+        alert('You lose')
+        window.location.reload()
+      }
+
       if(
         papersContext.totalPapers 
         === 
