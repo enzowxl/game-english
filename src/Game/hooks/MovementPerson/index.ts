@@ -3,6 +3,8 @@ import React, {
     useState
 } from 'react'
 
+import { useNavigate } from 'react-router-dom'
+
 import useEventListener from '@use-it/event-listener'
 
 import { checkMovement, handleNextPosition } from '../../contexts/canvas/helper'
@@ -15,7 +17,11 @@ import { BananasContexts } from '../../contexts/banana'
 import { StepsContexts } from '../../contexts/steps'
 
 
+
+
 export default function usePersonMovement(initialPosition) {
+
+    const navigate = useNavigate()
 
     const canvasContext = useContext(CanvasContext)
 
@@ -45,11 +51,6 @@ export default function usePersonMovement(initialPosition) {
         setDirection(direction);
       }
 
-      if(stepsContext.steps <= 0){
-        alert('You lose')
-        window.location.reload()
-      }
-
       if(movement.nextMove.valid){
         setPersonPosition(movement.nextPosition)
         console.log(stepsContext.steps)
@@ -65,7 +66,12 @@ export default function usePersonMovement(initialPosition) {
       }
 
       if(movement.nextMove.dead){
-        alert('You lose')
+        navigate('/dead')
+        window.location.reload()
+      }
+
+      if(stepsContext.steps <= 0){
+        navigate('/dead')
         window.location.reload()
       }
 
@@ -79,7 +85,7 @@ export default function usePersonMovement(initialPosition) {
         bananaContext.giveBananas.total
         &&
         movement.nextMove.bin){
-        alert('You win')
+        navigate('/gameTwO')
         window.location.reload()
       }
 

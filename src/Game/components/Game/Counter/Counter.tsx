@@ -12,23 +12,24 @@ function Counter() {
             top: 20,
             left: 30,
             display: 'flex',
-            alignItems: 'center',
-            backgroundColor:'white',
+            backgroundColor:'#bb9362',
             padding:10,
-            borderRadius:10
+            borderRadius:10,
+
           }}>
             <div style={{
-              color: 'black',
+              color: 'white',
               fontSize: 20,
-              fontWeight:400
+              fontWeight:600,
+            
             }}>
-              Steps: {steps}
+              STEPS - {steps}
             </div>
       
             <button style={{
-              color: 'black',
+              color: 'white',
               fontSize: 20,
-              fontWeight:500,
+              fontWeight:600,
               marginLeft: 16,
               background: 'transparent',
               border: 'none',

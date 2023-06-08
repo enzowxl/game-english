@@ -2,11 +2,14 @@ import React from 'react';
 
 import GameScreen from '../pages/Game';
 import Home from '../pages/Home';
+import Dead from '../pages/Dead';
 
 import { 
     createBrowserRouter,
     RouterProvider
 } from 'react-router-dom';
+import GameTwO from '../pages/GameTwO';
+
 
 
 function Routes() {
@@ -19,6 +22,14 @@ function Routes() {
         {
             path: '/',
             element: <Home/>
+        },
+        {
+            path: '/dead',
+            element: <Dead/>
+        },
+        {
+            path: '/gameTwO',
+            element: <GameTwO/>
         }
     ])
     

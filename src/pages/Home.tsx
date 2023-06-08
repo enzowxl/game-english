@@ -1,8 +1,13 @@
 import React from 'react';
 
+import HomeScreen from '../Home/index'
+
 export default function Home() {
+
     return (
-        <div>
+        <div className="App">
+
+            <HomeScreen/>
             
         </div>
     );
