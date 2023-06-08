@@ -1,17 +1,29 @@
 import React from 'react';
+import './style.css'
 
 export default function Image() {
     return (
 
-        <img
-        src='./assets/person.png'
-        alt=''
+        <div 
         style={{
-            width: 330,
-            position:'absolute',
-            top:120
+          position:'absolute',
+
+          top: 200,
+          
+          width:48,
+          height:48 + 12,
+
+          backgroundRepeat: 'no-repeat',
+          backgroundImage: 'url(./assets/person.png)',
+          backgroundPosition: `0px -${48 - 12}px`,
+
+          animation: 'image-animation 1s steps(4) infinite',
+
+
+          zIndex:3
+          
         }}
         />
         
     );
-}
+}        

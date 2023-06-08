@@ -1,14 +1,14 @@
 import { createContext, useState } from "react";
 
 export const StepsContexts = createContext({
-    steps: 73,
+    steps: 67,
     updateSteps: () => null
 })
 
 export default function StepsProvider({ children }) {
 
     const [stepsState, setStepsState] = useState({
-        steps:73,
+        steps:67,
         updateSteps: () => {
             setStepsState((state) => {
 
