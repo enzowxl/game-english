@@ -16,7 +16,7 @@ function Routes() {
 
     const router = createBrowserRouter([
         {
-            path: '/game1',
+            path: '/game',
             element: <GameScreen/>
         },
         {
@@ -28,7 +28,7 @@ function Routes() {
             element: <Dead/>
         },
         {
-            path: '/game1-fase2',
+            path: '/gameTwO',
             element: <GameTwO/>
         }
     ])
