@@ -4,19 +4,21 @@ import '../styles/App.css'
 import ExplicationGameOneComponent from '../Explication/ExplicationGameOne/index';
 
 export default function ExplicationGameOne() {
+
+
     return (
         
-        <div className="App" style={{
-            backgroundColor: 'black'
+        <div className="Explication" style={{
+            backgroundColor: 'black' //'#372713'
           }}>
 
             <div style={{
-                position:'relative',
                 width:960,
                 height:960
             }}>
 
-                <ExplicationGameOneComponent/>
+                <ExplicationGameOneComponent
+                />
 
             </div>
             

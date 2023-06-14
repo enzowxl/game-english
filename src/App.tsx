@@ -1,9 +1,6 @@
-import React from 'react';
-
 import Routes from './routes/index';
 
 import { isBrowser, isMobile } from 'react-device-detect'
-import LifesProvider from './context/Life';
 
 function App() {
 
@@ -27,7 +24,7 @@ function App() {
           fontSize:30
         }}
         className='App'>
-          {'Content only available on computer'.toUpperCase()}
+          {'content only available on computer'.toUpperCase()}
         </div>
 
       </>

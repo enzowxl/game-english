@@ -18,6 +18,7 @@ export default function Buttons({ name, func, top }) {
             fontWeight:'600',
             color:'black',
             fontSize:20,
+            borderWidth:0
         }}
         >{name}</button>
 

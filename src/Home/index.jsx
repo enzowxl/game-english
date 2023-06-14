@@ -29,6 +29,26 @@ export default function Home() {
 
             <Image/>
 
+            <div style={{
+                    color:'white',
+                    fontSize:40,
+                    marginTop:50,
+                    fontWeight:500,
+                    textAlign:'center',
+                    top: 250,        
+                    position:'absolute'
+            }}>RECYCLING</div>
+
+            <div style={{
+                    color:'white',
+                    fontSize:30,
+                    marginTop:50,
+                    fontWeight:500,
+                    textAlign:'center',
+                    top: 310,        
+                    position:'absolute'
+            }}>THE ENVIRONMENTAL ADVENTURE</div>
+
             <Buttons
             name={'START THE GAME'}
             func={navigateGame}
