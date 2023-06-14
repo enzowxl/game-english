@@ -20,7 +20,7 @@ export default function Paper({ initialPosition }) {
     return match
   })
 
-  const visible = animate ? null : 'url(./assets/paper.png)'
+  const visible = animate ? null : 'url(./assets/paper2.png)'
 
   return (
 

@@ -4,7 +4,9 @@ import Person from '../Person'
 import Paper from '../Trash/paper'
 import Banana from '../Trash/banana'
 import Trap from '../Trap'
-
+import Plastic from '../Trash/plastic'
+import Metal from '../Trash/metal'
+import Glass from '../Trash/glass'
 
 import {
   GAME_SIZE,
@@ -15,6 +17,10 @@ import { canvas } from '../../../contexts/canvas/helper'
 
 import { PapersContexts } from '../../../contexts/papers'
 import { BananasContexts } from '../../../contexts/banana'
+import { GlassContexts } from '../../../contexts/glass'
+import { PlasticContexts } from '../../../contexts/plastic'
+import { MetalContexts } from '../../../contexts/metal'
+
 
 
 
@@ -85,6 +91,39 @@ function getMap() {
         )
       }
 
+      if (text === NUMBER_OBJECTS.GLASS) {
+
+        tilesComponent.push(
+          <Glass
+            key={key}
+            initialPosition={position}
+          />
+
+        )
+      }
+
+      if (text === NUMBER_OBJECTS.METAL) {
+
+        tilesComponent.push(
+          <Metal
+            key={key}
+            initialPosition={position}
+          />
+
+        )
+      }
+
+      if (text === NUMBER_OBJECTS.PLASTIC) {
+
+        tilesComponent.push(
+          <Plastic
+            key={key}
+            initialPosition={position}
+          />
+
+        )
+      }
+
 
     }
 
@@ -103,6 +142,12 @@ export default function BackGround() {
 
   const bananaContext = useContext(BananasContexts)
 
+  const glassContext = useContext(GlassContexts)
+
+  const plasticContext = useContext(PlasticContexts)
+
+  const metalContext = useContext(MetalContexts)
+
 
 
   return (
@@ -113,13 +158,9 @@ export default function BackGround() {
 
       {
 
-        paperContext.totalPapers 
+        glassContext.totalGlass 
         === 
-        paperContext.givePapers.total
-        &&
-        bananaContext.totalBananas
-        === 
-        bananaContext.giveBananas.total
+        glassContext.giveGlass.total
 
         ? 
 
@@ -127,10 +168,10 @@ export default function BackGround() {
           <img
           style={{
             position:'absolute',
-            right:0,
-            top:20
+            right:55,
+            top:10
           }}
-          src='./assets/bin-open.png'
+          src='./assets/green-open.png'
           alt=''
           />
         )
@@ -141,13 +182,153 @@ export default function BackGround() {
           <img
           style={{
             position:'absolute',
-            right:0,
-            top:20
+            right:55,
+            top:22
           }}
-          src='./assets/bin-closed.png'
+          src='./assets/green-closed.png'
           alt=''
           />
         )
+      }
+
+      {
+
+      plasticContext.totalPlastic 
+      === 
+      plasticContext.givePlastic.total
+
+      ? 
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:150,
+          top:10
+        }}
+        src='./assets/red-open.png'
+        alt=''
+        />
+      )
+
+      :
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:150,
+          top:22
+        }}
+        src='./assets/red-closed.png'
+        alt=''
+        />
+      )
+      }
+
+      {
+
+      paperContext.totalPapers 
+      === 
+      paperContext.givePapers.total
+
+      ? 
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:245,
+          top:10
+        }}
+        src='./assets/blue-open.png'
+        alt=''
+        />
+      )
+
+      :
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:245,
+          top:22
+        }}
+        src='./assets/blue-closed.png'
+        alt=''
+        />
+      )
+      }
+
+      {
+
+      bananaContext.totalBananas 
+      === 
+      bananaContext.giveBananas.total
+
+      ? 
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:340,
+          top:10
+        }}
+        src='./assets/brown-open.png'
+        alt=''
+        />
+      )
+
+      :
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:340,
+          top:22
+        }}
+        src='./assets/brown-closed.png'
+        alt=''
+        />
+      )
+      }
+
+      {
+
+      metalContext.totalMetal 
+      === 
+      metalContext.giveMetal.total
+
+      ? 
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:440,
+          top:10
+        }}
+        src='./assets/yellow-open.png'
+        alt=''
+        />
+      )
+
+      :
+
+      (
+        <img
+        style={{
+          position:'absolute',
+          right:440,
+          top:22
+        }}
+        src='./assets/yellow-closed.png'
+        alt=''
+        />
+      )
       }
 
 

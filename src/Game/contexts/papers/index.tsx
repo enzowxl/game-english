@@ -12,7 +12,7 @@ export const PapersContexts = createContext({
 export default function PaperProvider({ children }) {
 
     const [paperState, setPaperState] = useState({
-        totalPapers: 5,
+        totalPapers: 2,
         givePapers: {
             total: 0,
             positions: []

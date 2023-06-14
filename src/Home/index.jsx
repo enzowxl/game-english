@@ -11,18 +11,21 @@ export default function Home() {
 
     function navigateGame() {
 
-        n('/game')
+        n('/game/explication')
+        window.localStorage.setItem('@lifes', 3)
         
     }
 
     function navigateInformation() {
 
-        //n('/information')
+        n('/guides')
         
     }
 
     return (
-        <div className='App'>
+        <div className="App" style={{
+            backgroundColor:'black'
+        }}>
 
             <Image/>
 
@@ -33,7 +36,7 @@ export default function Home() {
             />
 
             <Buttons
-            name={'INFORMATION'}
+            name={'GUIDES'}
             func={navigateInformation}
             top={600}
             />

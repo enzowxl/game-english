@@ -18,10 +18,18 @@ export default function Tile({ position, text }) {
             case NUMBER_OBJECTS.BIN:
                 return 'white'
             case NUMBER_OBJECTS.PAPER:
-                return 'cyan'
+                return 'blue'
             case NUMBER_OBJECTS.BANANA:
-                return 'orange'
+                return 'brown'
             case NUMBER_OBJECTS.HERO:
+                return 'black'
+            case NUMBER_OBJECTS.TRAP:
+                return 'cyan'
+            case NUMBER_OBJECTS.GLASS:
+                return 'green'
+            case NUMBER_OBJECTS.METAL: 
+                return 'orange'
+            case NUMBER_OBJECTS.PLASTIC:
                 return 'red'
         }
         

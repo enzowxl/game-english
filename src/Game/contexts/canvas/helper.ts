@@ -34,31 +34,39 @@ function handleNextPosition(direction, PersonPosition) {
 const {
     FLOOR: FL,
     WALL: WL,
-    BIN: BN,
+
+    HERO: HR,
+
+    TRAP: TP,
+
     PAPER: PP,
     BANANA: BA,
-    HERO: HR,
-    TRAP: TP
+    PLASTIC: PL,
+    GLASS: GL,
+    METAL: MT,
+
+    BIN: BN,
+
 } = NUMBER_OBJECTS
 
 const canvas = [
-    [WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,BN,BN,WL],
-    [WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,BN,BN,WL],
-    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,BN,BN,WL],
-    [WL,FL,FL,FL,PP,FL,FL,FL,FL,FL,TP,FL,FL,FL,FL,FL,FL,FL,FL,WL],
-    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
-    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,BA,FL,FL,FL,FL,FL,FL,FL,WL],
+    [WL,WL,WL,WL,WL,WL,WL,WL,WL,BN,BN,BN,BN,BN,BN,BN,BN,BN,BN,WL],
+    [WL,WL,WL,WL,WL,WL,WL,WL,WL,BN,BN,BN,BN,BN,BN,BN,BN,BN,BN,WL],
+    [WL,FL,FL,FL,FL,FL,FL,FL,FL,BN,BN,BN,BN,BN,BN,BN,BN,BN,BN,WL],
+    [WL,FL,FL,FL,PL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
+    [WL,FL,FL,FL,FL,FL,FL,FL,TP,FL,FL,FL,FL,FL,TP,FL,FL,FL,FL,WL],
+    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,GL,FL,FL,FL,FL,FL,FL,FL,WL],
     [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,PP,FL,WL],
     [WL,FL,BA,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
     [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
     [WL,FL,FL,FL,FL,TP,FL,FL,FL,FL,FL,FL,FL,FL,FL,TP,FL,FL,FL,WL],
-    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,PP,FL,FL,FL,FL,FL,FL,FL,FL,WL],
+    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,MT,FL,FL,FL,FL,FL,PL,FL,FL,WL],
     [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
-    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,BA,FL,FL,WL],
+    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
     [WL,PP,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
-    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
-    [WL,FL,FL,TP,FL,FL,FL,BA,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
-    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,TP,FL,FL,FL,FL,PP,FL,WL],
+    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,BA,FL,FL,FL,FL,FL,FL,WL],
+    [WL,FL,FL,TP,FL,FL,FL,GL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
+    [WL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,TP,FL,FL,FL,FL,MT,FL,WL],
     [WL,HR,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,FL,WL],
     [WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL],
     [WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL,WL],
@@ -83,22 +91,37 @@ function getPersonMoves(positionValue) {
 
         valid: 
         positionValue === NUMBER_OBJECTS.FLOOR 
+        ||
+        positionValue === NUMBER_OBJECTS.HERO
+        ||
+        positionValue === NUMBER_OBJECTS.TRAP
         || 
         positionValue === NUMBER_OBJECTS.PAPER
         ||
         positionValue === NUMBER_OBJECTS.BANANA
         ||
-        positionValue === NUMBER_OBJECTS.HERO
+        positionValue === NUMBER_OBJECTS.PLASTIC
         ||
-        positionValue === NUMBER_OBJECTS.TRAP,
+        positionValue === NUMBER_OBJECTS.GLASS
+        ||
+        positionValue === NUMBER_OBJECTS.METAL,
+
 
         dead:  positionValue === NUMBER_OBJECTS.TRAP,
+
+
+        bin: positionValue === NUMBER_OBJECTS.BIN,
+
 
         paper: positionValue === NUMBER_OBJECTS.PAPER,
 
         banana: positionValue === NUMBER_OBJECTS.BANANA,
 
-        bin: positionValue === NUMBER_OBJECTS.BIN
+        plastic: positionValue === NUMBER_OBJECTS.PLASTIC,
+
+        glass: positionValue === NUMBER_OBJECTS.GLASS,
+
+        metal: positionValue === NUMBER_OBJECTS.METAL
 
     }
     

@@ -12,7 +12,7 @@ export const BananasContexts = createContext({
 export default function BananaProvider({ children }) {
 
     const [bananaState, setBananaState] = useState({
-        totalBananas: 4,
+        totalBananas: 2,
         giveBananas: {
             total: 0,
             positions: []

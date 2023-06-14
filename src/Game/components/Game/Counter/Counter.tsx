@@ -1,10 +1,132 @@
 import React, { useContext } from 'react';
 
-import { StepsContexts } from '../../../contexts/steps';
+
+import { LifeContexts } from '../../../../context/Life';
 
 function Counter() {
 
-    const { steps } = useContext(StepsContexts)
+    function ComponentLife() {
+
+      const Lifes = window.localStorage.getItem('@lifes')
+
+      if(Lifes === '3'){
+
+        return(
+
+          <>
+              <div
+              style={{
+                backgroundImage: `url(./assets/heart.png)`,
+                width:25,
+                height:25,
+                marginRight:5,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+              <div
+              style={{
+                backgroundImage: `url(./assets/heart.png)`,
+                width:25,
+                height:25,
+                marginRight:5,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+              <div
+              style={{
+                backgroundImage: `url(./assets/heart.png)`,
+                width:25,
+                height:25,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+          </>
+          
+        )
+
+      }else if(Lifes === '2'){
+
+        return(
+
+          <>
+              <div
+              style={{
+                backgroundImage: `url(./assets/heart.png)`,
+                width:25,
+                height:25,
+                marginRight:5,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+              <div
+              style={{
+                backgroundImage: `url(./assets/heart.png)`,
+                width:25,
+                height:25,
+                marginRight:5,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+              <div
+              style={{
+                backgroundImage: `url(./assets/cracked_heart.png)`,
+                width:25,
+                height:25,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+          </>
+          
+        )
+
+      }else if(Lifes === '1'){
+
+        return(
+
+          <>
+              <div
+              style={{
+                backgroundImage: `url(./assets/heart.png)`,
+                width:25,
+                height:25,
+                marginRight:5,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+              <div
+              style={{
+                backgroundImage: `url(./assets/cracked_heart.png)`,
+                width:25,
+                height:25,
+                marginRight:5,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+              <div
+              style={{
+                backgroundImage: `url(./assets/cracked_heart.png)`,
+                width:25,
+                height:25,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize:'contain'
+              }}
+              />
+          </>
+          
+        )
+
+      }
+      
+    }
+
 
     return (
         <div style={{
@@ -14,30 +136,12 @@ function Counter() {
             display: 'flex',
             backgroundColor:'#bb9362',
             padding:10,
-            borderRadius:10,
+            borderRadius:5,
 
           }}>
-            <div style={{
-              color: 'white',
-              fontSize: 20,
-              fontWeight:600,
-            
-            }}>
-              STEPS - {steps}
-            </div>
-      
-            <button style={{
-              color: 'white',
-              fontSize: 20,
-              fontWeight:600,
-              marginLeft: 16,
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer'
-      
-            }} onClick={() => {
-                window.location.reload()
-            }}>⟳</button>
+
+              <ComponentLife/>
+
           </div>
     );
 }

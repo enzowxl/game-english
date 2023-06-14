@@ -1,14 +1,12 @@
 import React from 'react';
 
-import HomeScreen from '../Home/index'
+import Home from '../Home/index'
 
-export default function Home() {
+export default function HomeScreen() {
 
     return (
-        <div className="App">
 
-            <HomeScreen/>
+            <Home/>
             
-        </div>
     );
 }

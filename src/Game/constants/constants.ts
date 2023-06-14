@@ -21,10 +21,19 @@ export enum NUMBER_OBJECTS {
 
     FLOOR = 0,
     WALL = 1,
-    BIN = 2,
-    PAPER = 3,
-    BANANA = 4,
-    HERO = 5,
-    TRAP = 6
+    
+
+    HERO = 2,
+
+    TRAP = 3,
+
+    PAPER = 4, // BLUE
+    BANANA = 5, // BROWN
+    PLASTIC = 6, // RED
+    GLASS = 7, // GREEN,
+    METAL = 8, // YELLOW
+
+    BIN = 9, // WHITE
+
 
 }

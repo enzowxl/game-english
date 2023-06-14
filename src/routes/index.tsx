@@ -3,12 +3,21 @@ import React from 'react';
 import GameScreen from '../pages/Game';
 import Home from '../pages/Home';
 import Dead from '../pages/Dead';
+import GameTwO from '../pages/GameTwO';
+import ExplicationGameOne from '../pages/ExplicationGameOne';
+import ExplicationGameTwo from '../pages/ExplicationGameTwo';
+import GuidesScreen from '../pages/Guides';
+import GameThree from '../pages/GameThree';
+
+import LifesProvider from '../context/Life';
 
 import { 
     createBrowserRouter,
     RouterProvider
 } from 'react-router-dom';
-import GameTwO from '../pages/GameTwO';
+
+
+
 
 
 
@@ -16,21 +25,42 @@ function Routes() {
 
     const router = createBrowserRouter([
         {
-            path: '/game',
-            element: <GameScreen/>
+            path: '/',
+            element: <LifesProvider><Home/></LifesProvider>
         },
         {
-            path: '/',
-            element: <Home/>
+            path: '/guides',
+            element: <LifesProvider><GuidesScreen/></LifesProvider>
         },
+
+        {
+            path: '/game',
+            element: <LifesProvider><GameScreen/></LifesProvider>
+        },
+        {
+            path: '/game/explication',
+            element: <LifesProvider><ExplicationGameOne/></LifesProvider>
+        },
+
+        {
+            path: '/game-2',
+            element: <LifesProvider><GameTwO/></LifesProvider>
+        },
+        {
+            path: '/game-2/explication',
+            element: <LifesProvider><ExplicationGameTwo/></LifesProvider>
+        },
+
+        {
+            path: '/game-3',
+            element: <LifesProvider><GameThree/></LifesProvider>
+        },
+
+        ,
         {
             path: '/dead',
-            element: <Dead/>
+            element: <LifesProvider><Dead/></LifesProvider>
         },
-        {
-            path: '/gameTwO',
-            element: <GameTwO/>
-        }
     ])
     
     return (

@@ -9,10 +9,11 @@ export default  function Game() {
         <div>  
 
             {/*<Debugger/>*/}
+            
 
             <Counter/>
 
-            <BackGround/>
+            {<BackGround/>}
             
         </div>
     );

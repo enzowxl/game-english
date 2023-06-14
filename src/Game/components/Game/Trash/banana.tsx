@@ -20,7 +20,7 @@ export default function Banana({ initialPosition }) {
     return match
   })
 
-  const visible = animate ? null : 'url(./assets/banana.png)'
+  const visible = animate ? null : 'url(./assets/banana2.png)'
 
   return (
 

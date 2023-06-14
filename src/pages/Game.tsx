@@ -11,22 +11,21 @@ import Game from '../Game/components/Game/index';
 import PaperProvider from '../Game/contexts/papers';
 import BananaProvider from '../Game/contexts/banana';
 import StepsProvider from '../Game/contexts/steps';
-
+import GlassProvider from '../Game/contexts/glass';
+import PlasticProvider from '../Game/contexts/plastic'
+import MetalProvider from '../Game/contexts/metal';
+import Guides from '../Game/components/Game/Guides';
 
 function GameScreen() {
 
 
   return (
 
-    <div className="App">
+    <div className="App" style={{
+      backgroundColor: '#372713'
+    }}>
 
-      <div 
-      style={{
-        position:'relative',
-        width: GAME_SIZE,
-        height: GAME_SIZE,
-      }}
-      >
+
 
         <CanvasProvider>
 
@@ -36,7 +35,31 @@ function GameScreen() {
 
               <StepsProvider>
 
-                <Game/>
+                <GlassProvider>
+
+                  <PlasticProvider>
+
+                    <MetalProvider>
+
+                    <Guides/>
+                    
+                      <div 
+                      style={{
+                        position:'relative',
+                        width: GAME_SIZE,
+                        height: GAME_SIZE,
+                      }}
+                      >
+
+                      <Game/>
+
+                      </div>
+
+                    </MetalProvider>
+
+                  </PlasticProvider>
+
+                </GlassProvider>
 
               </StepsProvider>
 
@@ -46,8 +69,6 @@ function GameScreen() {
 
         </CanvasProvider>
 
-      </div>
-      
     </div>
 
   );
