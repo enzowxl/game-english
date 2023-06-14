@@ -8,11 +8,14 @@ import { DIRECTIONS, PERSONS } from '../../constants/constants'
 import { CanvasContext } from '../../contexts/canvas'
 
 import useInterval from '@use-it/interval'
+import { LifeContexts } from '../../../context/Life'
 
 
 export default function useEnemieMovement(initialPosition) {
 
   const canvasContext = useContext(CanvasContext)
+
+  const lifesContext = useContext(LifeContexts)
 
   const [EnemiePosition, setEnemiePosition] = useState(initialPosition)
   const [direction, setDirection] = useState(DIRECTIONS.RIGHT)
@@ -33,6 +36,10 @@ export default function useEnemieMovement(initialPosition) {
     if (movement.nextMove.valid) {
       setEnemiePosition(movement.nextPosition)
       setDirection(randomDirection)
+    }
+
+    if(movement.nextMove.dead){
+      lifesContext.updateLifes()
     }
 
   }
