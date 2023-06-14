@@ -17,7 +17,7 @@ import { LifeContexts } from '../context/Life';
 
 function GameTwOScreen() {
 
-  const lifeContext = useContext(LifeContexts)
+  /*const lifeContext = useContext(LifeContexts)
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -31,7 +31,7 @@ function GameTwOScreen() {
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, []);
+  }, []);*/
 
 
   return (

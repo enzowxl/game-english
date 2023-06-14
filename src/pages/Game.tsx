@@ -21,7 +21,7 @@ function GameScreen() {
 
   const lifeContext = useContext(LifeContexts)
 
-  useEffect(() => {
+  /*useEffect(() => {
     const handleBeforeUnload = (event) => {
       event.preventDefault();
       event.returnValue = '';
@@ -33,7 +33,7 @@ function GameScreen() {
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, []);
+  }, []);*/
 
   return (
 
