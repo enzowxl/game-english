@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import '../styles/App.css';
 
 import { 
@@ -15,9 +15,25 @@ import GlassProvider from '../Game/contexts/glass';
 import PlasticProvider from '../Game/contexts/plastic'
 import MetalProvider from '../Game/contexts/metal';
 import Guides from '../Game/components/Game/Guides';
+import { LifeContexts } from '../context/Life';
 
 function GameScreen() {
 
+  const lifeContext = useContext(LifeContexts)
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = '';
+      lifeContext.updateLifes()
+    };
+  
+    window.addEventListener('beforeunload', handleBeforeUnload);
+  
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   return (
 

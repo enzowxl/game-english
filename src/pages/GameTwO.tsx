@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import '../styles/App.css';
 
 import { 
@@ -12,9 +12,26 @@ import Game from '../GameTwO/components/Game/index';
 import StepsProvider from '../GameTwO/contexts/steps';
 import Guides from '../GameTwO/components/Game/Guides';
 import ShakeProvider from '../GameTwO/contexts/shake';
+import { LifeContexts } from '../context/Life';
 
 
 function GameTwOScreen() {
+
+  const lifeContext = useContext(LifeContexts)
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = '';
+      lifeContext.updateLifes()
+    };
+  
+    window.addEventListener('beforeunload', handleBeforeUnload);
+  
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
 
   return (

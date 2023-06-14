@@ -58,6 +58,8 @@ export default function usePersonMovement(initialPosition) {
       }
 
 
+
+
       const movement = canvasContext.updateCanvas(direction, PersonPosition,PERSONS.PERSON)
 
       if (direction === DIRECTIONS.LEFT || direction === DIRECTIONS.RIGHT) {

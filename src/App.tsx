@@ -1,3 +1,4 @@
+import { useContext, useEffect } from 'react';
 import Routes from './routes/index';
 
 import { isBrowser, isMobile } from 'react-device-detect'
