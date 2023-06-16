@@ -23,10 +23,13 @@ function Modal({
     function Ok() {
 
         setModalVisible(!modalVisible)
-        questionContext.updateQuestionsOk()
+        setTimeout(() => {
+            questionContext.updateQuestionsOk()
+        }, 1000)
         setTimeout(() => {
             setModalVisible2(true)
         }, 2000)
+        
         
     }
 

@@ -27,7 +27,7 @@ function Modal({
         questionContext.complete()
         setTimeout(() => {
             navigate('/win')
-        }, 2000)
+        }, 1000)
         
     }
 
