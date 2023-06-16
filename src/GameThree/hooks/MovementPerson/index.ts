@@ -48,12 +48,12 @@ export default function usePersonMovement(initialPosition) {
       const movement = canvasContext.updateCanvas(direction, PersonPosition,PERSONS.PERSON)
 
       if (direction === DIRECTIONS.LEFT || direction === DIRECTIONS.RIGHT) {
-        setDirection(direction);
+        //setDirection(direction);
       }
 
       if(movement.nextMove.valid){
-        setPersonPosition(movement.nextPosition)
-        stepsContext.updateSteps()
+        //setPersonPosition(movement.nextPosition)
+        //stepsContext.updateSteps()
       }
 
 
