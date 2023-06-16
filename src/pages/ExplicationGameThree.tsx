@@ -1,19 +1,24 @@
 import React from 'react';
 import '../styles/App.css'
 
-export default function ExplicationGameThree() {
+import ExplicationGameThreeComponent from '../Explication/ExplicationGameThree/index';
+
+export default function ExplicationGameOne() {
+
+
     return (
         
-        <div className="App" style={{
-            backgroundColor: 'black'
+        <div className="Explication" style={{
+            backgroundColor: 'black' //'#372713'
           }}>
 
             <div style={{
-                position:'relative',
                 width:960,
                 height:960
             }}>
 
+                <ExplicationGameThreeComponent/>
+                
 
             </div>
             

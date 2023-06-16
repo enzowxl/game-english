@@ -14,8 +14,6 @@ import { DIRECTIONS, PERSONS } from '../../constants/constants'
 import { CanvasContext } from '../../contexts/canvas'
 import { StepsContexts } from '../../contexts/steps'
 import { LifeContexts } from '../../../context/Life'
-import { BottleContexts } from '../../contexts/bottle'
-import { ShakeContexts } from '../../contexts/shake'
 
 
 
@@ -26,16 +24,13 @@ export default function usePersonMovement(initialPosition) {
 
     const canvasContext = useContext(CanvasContext)
 
-    const stepsContext = useContext(StepsContexts)
 
     const LifesContext = useContext(LifeContexts)
 
-    const bottleContext = useContext(BottleContexts)
-
-    const shakeContext = useContext(ShakeContexts)
+    const stepsContext = useContext(StepsContexts)
 
     const [PersonPosition, setPersonPosition] = useState(initialPosition)
-    const [direction, setDirection] = useState(DIRECTIONS.LEFT)
+    const [direction, setDirection] = useState(DIRECTIONS.RIGHT)
 
 
 
@@ -46,6 +41,8 @@ export default function usePersonMovement(initialPosition) {
       if(event.key.indexOf('Arrow') === -1){
         return
       }
+
+
 
 
       const movement = canvasContext.updateCanvas(direction, PersonPosition,PERSONS.PERSON)
@@ -59,27 +56,32 @@ export default function usePersonMovement(initialPosition) {
         stepsContext.updateSteps()
       }
 
-      if(movement.nextMove.bottle){
-        bottleContext.updateBottle(movement.nextPosition)
-      }
-
-      if(movement.nextMove.shake){
-        shakeContext.updateShake(movement.nextPosition)
-      }
 
 
-      if(
-        bottleContext.totalBottle 
+      /*if(
+        papersContext.totalPapers 
         === 
-        bottleContext.giveBottle.total
+        papersContext.givePapers.total
         &&
-        shakeContext.totalShake
+        bananaContext.totalBananas
+        === 
+        bananaContext.giveBananas.total
+        &&
+        glassContext.totalGlass
         ===
-        shakeContext.giveShake.total
+        glassContext.giveGlass.total
         &&
-        movement.nextMove.truck){
-        navigate('/game-3/explication')
-      }
+        plasticContext.totalPlastic
+        ===
+        plasticContext.givePlastic.total
+        &&
+        metalContext.totalMetal
+        ===
+        metalContext.giveMetal.total
+        &&
+        movement.nextMove.bin){
+        navigate('/game-2')
+      }*/
 
       if(movement.nextMove.dead){
         LifesContext.updateLifes()

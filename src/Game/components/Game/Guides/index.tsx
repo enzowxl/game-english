@@ -46,7 +46,7 @@ function Guides() {
             style={{
                 position:'absolute',
                 width:400,
-                height:370,
+                height:440,
                 backgroundColor:'#bb9362',
                 left:30,
                 top:300,
@@ -153,6 +153,17 @@ function Guides() {
                 }}
                 >{'Collected can of soda'.toUpperCase()} - {metalContext.giveMetal.total}/2
                 </div>
+
+                <div
+                style={{
+                    fontSize:15,
+                    fontWeight:'500',
+                    textAlign:'center',
+                    color:'white',
+                    margin:20,
+                    height:30,
+                }}
+                >Collect all the rubbish and deliver it to the bins, but be careful that your steps don't end</div>
 
             </div>
             

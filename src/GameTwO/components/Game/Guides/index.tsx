@@ -34,7 +34,7 @@ function Guides() {
             style={{
                 position:'absolute',
                 width:400,
-                height:370,
+                height:290,
                 backgroundColor:'#899c9e',
                 left:30,
                 top:300,
@@ -111,6 +111,18 @@ function Guides() {
                 }}
                 >{'collected mil shakes'.toUpperCase()} - {bottleContext.giveBottle.total}/3
                 </div>
+
+
+                <div
+                style={{
+                    fontSize:15,
+                    fontWeight:'500',
+                    textAlign:'center',
+                    color:'white',
+                    margin:20,
+                    height:30,
+                }}
+                >Collect all the plastics and deliver them to the truck, but watch out for the sharks</div>
 
 
             </div>

@@ -19,21 +19,6 @@ import { LifeContexts } from '../context/Life';
 
 function GameScreen() {
 
-  const lifeContext = useContext(LifeContexts)
-
-  /*useEffect(() => {
-    const handleBeforeUnload = (event) => {
-      event.preventDefault();
-      event.returnValue = '';
-      lifeContext.updateLifes()
-    };
-  
-    window.addEventListener('beforeunload', handleBeforeUnload);
-  
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []);*/
 
   return (
 

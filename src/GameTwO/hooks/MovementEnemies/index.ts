@@ -21,7 +21,7 @@ export default function useEnemieMovement(initialPosition) {
   const [direction, setDirection] = useState(DIRECTIONS.RIGHT)
 
   
-  useInterval(move, 1000)
+  useInterval(move, 500)
 
 
   function move() {
