@@ -7,7 +7,7 @@ export default function DeadScreen() {
 
     return (
         <div className="App" style= {{
-                backgroundColor:'black'
+                backgroundColor:'red'
         }}>
 
             <div style={{
@@ -24,7 +24,7 @@ export default function DeadScreen() {
                 fontWeight:500,
                 textAlign:'center',
             }}
-            >GAME OVER</div>
+            >GAME OVER, LOSER</div>
 
             <button
                     onClick={() => {
@@ -35,9 +35,9 @@ export default function DeadScreen() {
                         width: 482,
                         height: 82,
                         borderRadius:100,
-                        marginTop:200,
+                        marginTop:50,
                         fontWeight:'600',
-                        color:'black',
+                        color:'red',
                         fontSize:20,
                         borderWidth:0
                     }}
