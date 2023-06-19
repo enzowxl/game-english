@@ -115,7 +115,7 @@ export default function usePersonMovement(initialPosition) {
         metalContext.giveMetal.total
         &&
         movement.nextMove.bin){
-        navigate('/game-2')
+        navigate('/game-2/explication')
       }
 
       if(movement.nextMove.dead){
